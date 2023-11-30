@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>uf-list</ion-title>
+    <ion-title>IBGE - Lista de Estados</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +10,10 @@
       <ion-title size="large">uf-list</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-list>
+    <ion-chip button *ngFor="let uf of ufList" [routerLink]="[uf.id]">
+      <p>{{ uf.sigla }} - {{ uf.nome }}</p>
+    </ion-chip>
+  </ion-list>
 </ion-content>

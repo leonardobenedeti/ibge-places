@@ -1,13 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>IBGE - Lista de cidades</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Estados"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cidades</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">cities</ion-title>
+      <ion-title size="large">Cidades do {{ufName}}</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-list>
+    <ion-chip button *ngFor="let city of cities">
+      <p>{{ city.nome }}</p>
+    </ion-chip>
+  </ion-list>
 </ion-content>

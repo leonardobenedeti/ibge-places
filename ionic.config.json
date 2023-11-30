@@ -1,0 +1,7 @@
+{
+  "name": "IBGEPlaces",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

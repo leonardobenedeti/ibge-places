@@ -1,12 +1,22 @@
 export interface UF {
-    id: Number;
-    nome: String;
-    sigla: String;
+    id: number;
+    nome: string;
+    sigla: string;
 }
 
 export interface City {
-    id: Number;
-    nome: String;
+    id: number;
+    nome: string;
+}
+
+export interface Names {
+    nome: string;
+    res: Interval[];
+}
+
+export interface Interval {
+    periodo: string;
+    frequencia: number;
 }
 
 export function isUF(obj: any): obj is UF {

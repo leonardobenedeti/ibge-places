@@ -1,13 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>city-details</ion-title>
+    <ion-title>Detalhes cidade</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">city-details</ion-title>
+      <ion-title size="large">Detalhes cidade</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-card>
+    <img alt="Silhouette of mountains" [src]="imageCity" />
+    <ion-card-header>
+      <ion-card-title>{{nameCity}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <h1>Tivemos <b>{{howManyLeos}}</b> Leonardos nascidos aqui!</h1>
+
+
+      <p>Data da última validação do IBGE: {{lastRangeCity}}</p>
+
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>

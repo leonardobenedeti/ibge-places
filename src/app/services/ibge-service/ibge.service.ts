@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { City, UF } from './ibge.interfaces';
+import { City, Names, UF } from './ibge.interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IbgeService {
-  private ibgeUrl = 'https://servicodados.ibge.gov.br/api/v1/localidades';
+  private localidadesUrl = 'https://servicodados.ibge.gov.br/api/v1/localidades';
+  private namesUrl = 'https://servicodados.ibge.gov.br/api/v2/censos/nomes/leonardo?localidade=';
   private orderByName = '?orderBy=nome';
   private ufPath = '/estados';
   private citiesPath = '/municipios';
@@ -17,11 +18,16 @@ export class IbgeService {
   }
 
   getUF(): Observable<UF[]> {
-    return this.http.get<UF[]>(this.ibgeUrl + this.ufPath + this.orderByName);
+    return this.http.get<UF[]>(this.localidadesUrl + this.ufPath + this.orderByName);
   }
 
   getCities(ufID: String): Observable<City[]> {
     let ufIDPath = '/' + ufID;
-    return this.http.get<City[]>(this.ibgeUrl + this.ufPath + ufIDPath + this.citiesPath + this.orderByName);
+    return this.http.get<City[]>(this.localidadesUrl + this.ufPath + ufIDPath + this.citiesPath + this.orderByName);
+  }
+
+  getNumberOfLeos(placeID: Number): Observable<Names[]> {
+    console.log(this.namesUrl + placeID)
+    return this.http.get<Names[]>(this.namesUrl + placeID);
   }
 }

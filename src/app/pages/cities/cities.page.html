@@ -15,7 +15,7 @@
   </ion-header>
 
   <ion-list>
-    <ion-chip button *ngFor="let city of cities">
+    <ion-chip button *ngFor="let city of cities" (click)="selectCity(city)">
       <p>{{ city.nome }}</p>
     </ion-chip>
   </ion-list>

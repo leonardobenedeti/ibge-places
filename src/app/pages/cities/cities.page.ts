@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { City, UF, isUF } from 'src/app/services/ibge-service/ibge.interfaces';
 import { IbgeService } from 'src/app/services/ibge-service/ibge.service';
 
@@ -16,7 +16,6 @@ export class CitiesPage implements OnInit {
   public ufName: String = '';
 
   constructor(
-    private route: ActivatedRoute,
     private router: Router,
     private ibgeService: IbgeService,
   ) { }
@@ -45,6 +44,15 @@ export class CitiesPage implements OnInit {
         console.log('Cities error:', err);
       },
     );
+  }
+
+  public selectCity(city: City) {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        citySelected: city,
+      }
+    };
+    this.router.navigateByUrl('/city-details', navigationExtras);
   }
 
 }

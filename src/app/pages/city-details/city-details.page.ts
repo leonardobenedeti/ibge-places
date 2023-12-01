@@ -14,7 +14,7 @@ export class CityDetailsPage implements OnInit {
 
   public imageCity: string = '';
   public nameCity: string = '';
-  public howManyLeos: string = '';
+  public howManyLeos: string = '0';
   public lastRangeCity: string = '';
 
   constructor(

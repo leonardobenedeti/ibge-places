@@ -14,6 +14,7 @@ export class CitiesPage implements OnInit {
   public cities: City[] = [];
 
   public ufName: String = '';
+  public ufSigla: String = '';
 
   constructor(
     private router: Router,
@@ -27,6 +28,7 @@ export class CitiesPage implements OnInit {
       if (uf != undefined && uf != null && isUF(uf)) {
         this.ufSelected = uf;
         this.ufName = `${uf.nome}`;
+        this.ufSigla = `${uf.sigla}`;
       }
     }
 

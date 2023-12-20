@@ -1,0 +1,19 @@
+ion-card {
+    img {
+        width: 100%;
+        height: auto;
+        padding: 8px;
+        background-color: #ccc;
+    }
+
+    ion-card-content {
+        h1 {
+            &.leos {
+                padding: 4px 8px;
+                background-color: #ccc;
+                color: #000;
+                border-radius: 8px;
+            }
+        }
+    }
+}
